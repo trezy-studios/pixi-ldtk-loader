@@ -3,7 +3,7 @@ name: Test
 on: ['push']
 
 jobs:
-  release:
+  test:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout
@@ -23,3 +23,5 @@ jobs:
 
       - name: Report coverage
         uses: coverallsapp/github-action@v2
+        with:
+          allow-empty: true
