@@ -4,14 +4,15 @@
   "author": "Trezy <t@trezy.com>",
   "license": "BSD-3-Clause",
   "repository": "git@github.com:trezy-studios/pixi-ldtk-loader.git",
-  "version": "1.0.0",
+  "version": "0.0.0-development",
   "main": "src/index.js",
   "type": "module",
   "types": "./types/index.d.ts",
   "scripts": {
     "generateLDTKTypes": "node scripts/generateLDTKTypes",
     "lint": "eslint ./src/",
-    "test": "NODE_ENV=test nyc --reporter=lcovonly --reporter=text-summary mocha"
+    "test": "NODE_ENV=test nyc --reporter=lcovonly --reporter=text-summary mocha",
+    "semantic-release": "semantic-release"
   },
   "devDependencies": {
     "@pixi/assets": "^7.2.4",
@@ -39,6 +40,7 @@
     "mocha": "^10.2.0",
     "nyc": "^15.1.0",
     "quicktype-core": "^23.0.71",
+    "semantic-release": "^21.0.9",
     "sinon": "^15.2.0",
     "ts-to-jsdoc": "^1.2.2",
     "typescript": "^5.1.6"
