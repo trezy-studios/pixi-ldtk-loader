@@ -3,7 +3,10 @@
   "description": "LDtk loader for Pixi.js.",
   "author": "Trezy <t@trezy.com>",
   "license": "BSD-3-Clause",
-  "repository": "git@github.com:trezy-studios/pixi-ldtk-loader.git",
+  "repository": {
+    "type": "git",
+    "url": "git+ssh://git@github.com/trezy-studios/pixi-ldtk-loader.git"
+  },
   "version": "0.0.0-development",
   "main": "src/index.js",
   "type": "module",
@@ -24,7 +27,7 @@
     "@types/node": "^20.5.1",
     "@typescript-eslint/eslint-plugin": "^6.4.1",
     "@typescript-eslint/parser": "^6.4.1",
-    "better-docs": "drazisil/better-docs#dfbd2e3158f119d247c2efbf72acc79d1ec4db5c",
+    "better-docs": "github:drazisil/better-docs#dfbd2e3158f119d247c2efbf72acc79d1ec4db5c",
     "chai": "^4.3.7",
     "coveralls": "^3.1.1",
     "eslint": "^8.47.0",
