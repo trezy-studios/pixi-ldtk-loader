@@ -1,0 +1,13 @@
+.codeclimate.yml
+.editorconfig
+.eslintrc.cjs
+.github
+.nvmrc
+.releaserc
+.yarn
+.yarnrc.yml
+jsdoc.json
+scripts
+test
+tsconfig.json
+yarn.lock
