@@ -41,8 +41,8 @@ Or it can be used as an Application level extension:
 
 ```js
 import {
-	Application,
-	extensions,
+  Application,
+  extensions,
 } from 'pixi.js'
 import { LDTKLoader } from 'pixi-ldtk-loader'
 
@@ -76,48 +76,48 @@ const layerCache = {}
 const { levels } = Assets.get('game-project.ldtk')
 
 levels.forEach(level => {
-	// We'll destructure the `layers` array from the level since it's the only key
-	// we need for rendering.
-	const { layers } = level
+  // We'll destructure the `layers` array from the level since it's the only key
+  // we need for rendering.
+  const { layers } = level
 
-	layers.forEach(layer => {
-		// Skip all parsing if the layer has no tiles.
-		if (layer.tiles?.length) {
-			// Retrieve the layer's Pixi container from the cache if it exists...
-			let layerContainer = layerCache[layer.name]
+  layers.forEach(layer => {
+    // Skip all parsing if the layer has no tiles.
+    if (layer.tiles?.length) {
+      // Retrieve the layer's Pixi container from the cache if it exists...
+      let layerContainer = layerCache[layer.name]
 
-			// ...or create a new container and store it in the cache..
-			if (!layerContainer) {
-				layerContainer = new Container
-				layerContainer.name = layer.name
-				layerCache[layer.name] = layerContainer
-			}
+      // ...or create a new container and store it in the cache..
+      if (!layerContainer) {
+        layerContainer = new Container
+        layerContainer.name = layer.name
+        layerCache[layer.name] = layerContainer
+      }
 
-			layer.tiles.forEach(tile => {
-				// We create a tile object for every tile, regardless of whether they
-				// have a texture applied. If they have no texture, tho, then we have
-				// nothing to render.
-				if (!tile?.texture) return
+      layer.tiles.forEach(tile => {
+        // We create a tile object for every tile, regardless of whether they
+        // have a texture applied. If they have no texture, tho, then we have
+        // nothing to render.
+        if (!tile?.texture) return
 
-				// Create a new sprite for every tile. If your tiles don't need to be
-				// adjusted individually, it'd probably be better to use
-				// `@pixi/tilemap`.
-				const sprite = new Sprite(tile.texture)
+        // Create a new sprite for every tile. If your tiles don't need to be
+        // adjusted individually, it'd probably be better to use
+        // `@pixi/tilemap`.
+        const sprite = new Sprite(tile.texture)
 
-				// Position the Sprite in screen space using its position in the level,
-				// adjusted by the level's world offset.
-				sprite.x = (tile.position.x * tile.width) + level.worldPosition.x
-				sprite.y = (tile.position.y * tile.height) + level.worldPosition.y
+        // Position the Sprite in screen space using its position in the level,
+        // adjusted by the level's world offset.
+        sprite.x = (tile.position.x * tile.width) + level.worldPosition.x
+        sprite.y = (tile.position.y * tile.height) + level.worldPosition.y
 
-				// Add the tile's Sprite to the layer's Container.
-				layerContainer.addChild(sprite)
-			})
-		}
+        // Add the tile's Sprite to the layer's Container.
+        layerContainer.addChild(sprite)
+      })
+    }
 
-		// Add the layer's container to the application stage.
-		app.stage.addChild(layerContainer)
-	})
+    // Add the layer's container to the application stage.
+    app.stage.addChild(layerContainer)
+  })
 
-	return targetContainer
+  return targetContainer
 })
 ```
