@@ -18,12 +18,19 @@ import * as types from './types.js'
 /**
  * Generates a base object for sprite atlases.
  *
- * @param {string} imageSrc The path to the image file.
- * @param {number} pixelHeight The pixel height of tiles in the tileset.
- * @param {number} pixelWidth The pixel width of tiles in the tileset.
+ * @param {object} config All config.
+ * @param {string} config.imageSrc The path to the image file.
+ * @param {number} config.pixelHeight The pixel height of tiles in the tileset.
+ * @param {number} config.pixelWidth The pixel width of tiles in the tileset.
  * @returns {import('@pixi/spritesheet').ISpritesheetData} The generated atlas base.
  */
-function generateBaseAtlas(imageSrc, pixelHeight, pixelWidth) {
+function generateBaseAtlas(config) {
+	const {
+		imageSrc,
+		pixelHeight,
+		pixelWidth,
+	} = config
+
 	return {
 		frames: {},
 		meta: {
@@ -44,14 +51,23 @@ function generateBaseAtlas(imageSrc, pixelHeight, pixelWidth) {
 /**
  * Generates a base tileset object.
  *
- * @param {number} id The ID of the tileset.
- * @param {number} columnCount The number of columns in the tileset.
- * @param {number} rowCount The number of rows in the tileset.
- * @param {number} tileGridHeight The height of columns in the tileset.
- * @param {number} tileGridWidth The width of a tile grid cell.
+ * @param {object} config All config.
+ * @param {number} config.columnCount The number of columns in the tileset.
+ * @param {number} config.id The ID of the tileset.
+ * @param {number} config.rowCount The number of rows in the tileset.
+ * @param {number} config.tileGridHeight The height of columns in the tileset.
+ * @param {number} config.tileGridWidth The width of a tile grid cell.
  * @returns {types.LDTKTileset} The generated tileset base.
  */
-function generateBaseTileset(id, columnCount, rowCount, tileGridHeight, tileGridWidth) {
+function generateBaseTileset(config) {
+	const {
+		columnCount,
+		id,
+		rowCount,
+		tileGridHeight,
+		tileGridWidth,
+	} = config
+
 	return {
 		id,
 		meta: {
@@ -70,12 +86,19 @@ function generateBaseTileset(id, columnCount, rowCount, tileGridHeight, tileGrid
 /**
  * Creates an atlas frame from Ldtk tile data.
  *
- * @param {number} tileGridSize The size of a tile grid cell.
- * @param {number} column The grid-relative column of the tile.
- * @param {number} row The grid-relative row of the tile.
+ * @param {object} config All config.
+ * @param {number} config.column The grid-relative column of the tile.
+ * @param {number} config.row The grid-relative row of the tile.
+ * @param {number} config.tileGridSize The size of a tile grid cell.
  * @returns {import('@pixi/spritesheet').ISpritesheetFrameData} The generated tile frame data.
  */
-function generateTileFrameData(tileGridSize, column, row) {
+function generateTileFrameData(config) {
+	const {
+		column,
+		row,
+		tileGridSize,
+	} = config
+
 	return {
 		frame: {
 			h: tileGridSize,
@@ -125,10 +148,20 @@ export async function parseTileset(config) {
 
 	const texture = await loader.load({ src: tilesetSrc })
 
-	const tileset = generateBaseTileset(sourceData.uid, columnCount, rowCount, sourceData.tileGridSize, sourceData.tileGridSize)
+	const tileset = generateBaseTileset({
+		columnCount,
+		id: sourceData.uid,
+		rowCount,
+		tileGridHeight: sourceData.tileGridSize,
+		tileGridWidth: sourceData.tileGridSize,
+	})
 
 	/** @type {import('@pixi/spritesheet').ISpritesheetData} */
-	const atlas = generateBaseAtlas(tilesetSrc, sourceData.pxHei, sourceData.pxWid)
+	const atlas = generateBaseAtlas({
+		imageSrc: tilesetSrc,
+		pixelHeight: sourceData.pxHei,
+		pixelWidth: sourceData.pxWid,
+	})
 
 	const totalTiles = sourceData.__cHei * sourceData.__cWid
 	let tileIndex = 0
@@ -137,7 +170,11 @@ export async function parseTileset(config) {
 		const column = tileIndex % columnCount
 		const row = Math.floor(tileIndex / columnCount)
 
-		atlas.frames[`${tileset.id}::${tileIndex}`] = generateTileFrameData(sourceData.tileGridSize, column, row)
+		atlas.frames[`${tileset.id}::${tileIndex}`] = generateTileFrameData({
+			column,
+			row,
+			tileGridSize: sourceData.tileGridSize,
+		})
 
 		tileIndex += 1
 	}
