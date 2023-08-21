@@ -1,0 +1,53 @@
+{
+  "name": "pixi-ldtk-loader",
+  "description": "LDtk loader for Pixi.js.",
+  "author": "Trezy <t@trezy.com>",
+  "license": "BSD-3-Clause",
+  "repository": "git@github.com:trezy-studios/pixi-ldtk-loader.git",
+  "version": "1.0.0",
+  "main": "src/index.js",
+  "type": "module",
+  "types": "./types/index.d.ts",
+  "scripts": {
+    "generateLDTKTypes": "node scripts/generateLDTKTypes",
+    "lint": "eslint ./src/",
+    "test": "NODE_ENV=test nyc --reporter=lcovonly --reporter=text-summary mocha"
+  },
+  "devDependencies": {
+    "@pixi/assets": "^7.2.4",
+    "@pixi/core": "^7.2.4",
+    "@pixi/spritesheet": "^7.2.4",
+    "@pixi/utils": "^7.2.4",
+    "@types/eslint": "^8.44.2",
+    "@types/mocha": "^10.0.1",
+    "@types/node": "^20.5.1",
+    "@typescript-eslint/eslint-plugin": "^6.4.1",
+    "@typescript-eslint/parser": "^6.4.1",
+    "better-docs": "drazisil/better-docs#dfbd2e3158f119d247c2efbf72acc79d1ec4db5c",
+    "chai": "^4.3.7",
+    "coveralls": "^3.1.1",
+    "eslint": "^8.47.0",
+    "eslint-plugin-editorconfig": "^4.0.3",
+    "eslint-plugin-jsdoc": "^46.5.0",
+    "eslint-plugin-optimize-regex": "^1.2.1",
+    "eslint-plugin-promise": "^6.1.1",
+    "eslint-plugin-security": "^1.7.1",
+    "eslint-plugin-sort-class-members": "^1.18.0",
+    "eslint-plugin-unused-imports": "^3.0.0",
+    "jsdoc": "^4.0.2",
+    "listr2": "^6.6.1",
+    "mocha": "^10.2.0",
+    "nyc": "^15.1.0",
+    "quicktype-core": "^23.0.71",
+    "sinon": "^15.2.0",
+    "ts-to-jsdoc": "^1.2.2",
+    "typescript": "^5.1.6"
+  },
+  "peerDependencies": {
+    "@pixi/assets": "^7.2.4",
+    "@pixi/core": "^7.2.4",
+    "@pixi/spritesheet": "^7.2.4",
+    "@pixi/utils": "^7.2.4"
+  },
+  "packageManager": "yarn@3.6.1"
+}
