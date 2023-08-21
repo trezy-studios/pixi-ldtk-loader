@@ -40,5 +40,10 @@ checks:
       threshold: # language-specific defaults. an override will affect all languages.
 
 plugins:
+  duplication:
+    enabled: true
+    config:
+      languages:
+      - javascript:
   eslint:
     enabled: true
