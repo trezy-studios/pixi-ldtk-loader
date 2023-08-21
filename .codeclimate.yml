@@ -47,3 +47,5 @@ plugins:
       - javascript:
   eslint:
     enabled: true
+  git-legal:
+    enabled: true
