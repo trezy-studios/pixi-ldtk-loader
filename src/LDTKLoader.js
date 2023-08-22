@@ -12,19 +12,6 @@ import {
 
 
 
-// Local imports
-import { Convert } from './helpers/ldtk-quicktype.js'
-import { parseLevels } from './helpers/parseLevels.js'
-import { parseTilesets } from './helpers/parseTilesets.js'
-import * as path from './path.js'
-
-// eslint-disable-next-line @typescript-eslint/no-unused-vars
-import * as types from './helpers/types.js'
-
-
-
-
-
 /** @type {import('@pixi/assets').LoaderParser} */
 export const LDTKLoader = {
 	extension: {
@@ -52,33 +39,15 @@ export const LDTKLoader = {
 	 */
 	async load(url, asset, loader) {
 		const response = await settings.ADAPTER.fetch(url)
+		const ldtkString = await response.text()
 
-		const ldtkText = await response.text()
-		const ldtkJSON = Convert.toLDTKProject(ldtkText)
+		const untypedLDTKJSON = JSON.parse(ldtkString)
+		const { parse } = await import(`./parsers/${untypedLDTKJSON.jsonVersion}/index.js`)
 
-		const assetBasePath = asset.src.replace(path.basename(asset.src), '')
-
-		/** @type {types.LDTKObject} */
-		const ldtkObject = {
-			levels: [],
-			meta: {
-				app: 'LDtk',
-				original: ldtkJSON,
-				version: ldtkJSON.appBuildId,
-			},
-			tilesets: await parseTilesets({
-				assetBasePath,
-				loader,
-				sourceData: ldtkJSON.defs.tilesets,
-			}),
-		}
-
-		ldtkObject.levels = await parseLevels({
-			assetBasePath,
-			sourceData: ldtkJSON.levels,
-			tilesets: ldtkObject.tilesets,
+		return parse({
+			asset,
+			ldtkString,
+			loader,
 		})
-
-		return ldtkObject
 	},
 }

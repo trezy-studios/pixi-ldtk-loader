@@ -2,7 +2,7 @@
 // eslint-disable-next-line @typescript-eslint/no-unused-vars
 import * as types from './types.js'
 
-import { getTileTextureFromTileset } from './getTileTextureFromTileset.js'
+import { getTileTextureFromTileset } from '../../helpers/getTileTextureFromTileset.js'
 
 
 
@@ -12,7 +12,7 @@ import { getTileTextureFromTileset } from './getTileTextureFromTileset.js'
  * Parses tiles from LDtk source data.
  *
  * @param {object} config All configs.
- * @param {import('./ldtk-quicktype.js').TileInstance[]} config.sourceData Tile data from LDtk source.
+ * @param {import('../../quicktypes/1.3.3.js').TileInstance[]} config.sourceData Tile data from LDtk source.
  * @param {types.LDTKTileset} config.tileset The layer's tileset.
  * @returns {types.LDTKLevelLayerTile[]} An array of parsed tiles.
  */

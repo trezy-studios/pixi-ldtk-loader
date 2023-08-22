@@ -13,7 +13,7 @@ import * as types from './types.js'
  * Parses a layer from LDtk source data.
  *
  * @param {object} config All configs.
- * @param {import('./ldtk-quicktype.js').LayerInstance} config.sourceData Layer data from LDtk source.
+ * @param {types.LayerInstance} config.sourceData Layer data from LDtk source.
  * @param {types.ParsedTilesetMap} config.tilesets Tilesets that have been loaded from the LDtk source.
  * @returns {types.LDTKLevelLayer} The parsed layer.
  */

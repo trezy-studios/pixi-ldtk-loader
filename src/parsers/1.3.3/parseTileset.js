@@ -128,10 +128,11 @@ function generateTileFrameData(config) {
  * @param {object} config All configs.
  * @param {string} config.assetBasePath The base path from which the tileset will be loaded.
  * @param {import('@pixi/assets').Loader} config.loader The Pixi loader.
- * @param {import('./ldtk-quicktype.js').TilesetDefinition} config.sourceData Tileset source data.
+ * @param {import('../../quicktypes/1.3.3.js').TilesetDefinition} config.sourceData Tileset source data.
  * @returns {Promise<types.LDTKTileset | null>} The parsed tileset.
  */
 export async function parseTileset(config) {
+
 	const {
 		assetBasePath,
 		loader,
@@ -179,8 +180,13 @@ export async function parseTileset(config) {
 		tileIndex += 1
 	}
 
-	tileset.spritesheet = new Spritesheet(texture, atlas)
-	await tileset.spritesheet.parse()
+	console.log(texture, atlas)
+	try {
+		tileset.spritesheet = new Spritesheet(texture, atlas)
+		await tileset.spritesheet.parse()
+	} catch (error) {
+		console.log(error)
+	}
 
 	return tileset
 }

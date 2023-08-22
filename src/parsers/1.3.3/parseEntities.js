@@ -10,7 +10,7 @@ import * as types from './types.js'
  * Parses entities from LDtk source data.
  *
  * @param {object} config All configs.
- * @param {import('./ldtk-quicktype.js').EntityInstance[]} config.sourceData Entity data from LDtk source.
+ * @param {import('../../quicktypes/1.3.3.js').EntityInstance[]} config.sourceData Entity data from LDtk source.
  * @returns {types.LDTKEntity[]} An array of parsed entities.
  */
 export function parseEntities(config) {
