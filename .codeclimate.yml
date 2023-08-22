@@ -1,10 +1,10 @@
 version: "2"
 
 exclude_patterns:
-  - "src/helpers/ldtk-quicktype.js"
-  - "**/node_modules/"
-  - "**/test/"
   - "**/*.d.ts"
+  - "**/node_modules/"
+  - "**/quicktype.js"
+  - "**/test/"
   - "scripts/"
 
 checks:
