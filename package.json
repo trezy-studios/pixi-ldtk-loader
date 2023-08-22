@@ -27,6 +27,7 @@
     "@types/node": "^20.5.1",
     "@typescript-eslint/eslint-plugin": "^6.4.1",
     "@typescript-eslint/parser": "^6.4.1",
+    "better-docs": "github:drazisil/better-docs#dfbd2e3158f119d247c2efbf72acc79d1ec4db5c",
     "chai": "^4.3.7",
     "coveralls": "^3.1.1",
     "eslint": "^8.47.0",
