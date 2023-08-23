@@ -29,6 +29,9 @@ jobs:
           fetch-depth: 0
           ref: ${{ github.event.workflow_run.head_branch || github.ref_name }}
 
+      - name: Retrieve additional tag data
+        run: git fetch --tags --force
+
       - name: Setup Node
         uses: actions/setup-node@v3
         with:
@@ -37,9 +40,6 @@ jobs:
 
       - name: Install Packages
         run: yarn install
-
-      - name: Test tag listing
-        run: git tag --merged main
 
       - name: Release
         env:
