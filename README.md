@@ -2,6 +2,22 @@
 
 > **Import [LDtk](https://ldtk.io/) files directly into your [Pixi.js](https://pixijs.com/) project.**
 
+[![Version][version-badge]][package]
+[![BSD-3-Clause License][license-badge]][license]
+[![Downloads][downloads-badge]][npmtrends]
+[![Bundle size][bundlephobia-badge]][bundlephobia]
+
+<!-- [![Code Coverage][coveralls-badge]][coveralls] -->
+
+[![Build status][build-status-badge]][build-status]
+[![Dependencies][libraries.io-badge]][libraries.io]
+[![Maintainability][codeclimate-badge]][codeclimate]
+[![Code of Conduct][code-of-conduct-badge]][code-of-conduct]
+<!-- [![PRs Welcome][prs-badge]][prs] -->
+
+[![Watch on GitHub][github-watch-badge]][github-watch]
+[![Star on GitHub][github-star-badge]][github-star]
+
 [LDtk](https://ldtk.io/) is an excellent tool for building expansive 2D worlds, which also makes it an amazing candidate for building your Pixi.js levels. This project makes it dead simple to import your raw `.ldtk` files directly into Pixi.js.
 
 When loading your `.ldtk` files, the loader will automatically create spritesheets and textures for your LDtk tilesets. It'll also generate an easy-to-parse object representing the entire file, making it easy to access all of your levels, layers, enums, entities, and custom properties.
@@ -122,3 +138,32 @@ levels.forEach(level => {
   return targetContainer
 })
 ```
+
+
+
+
+
+[bundlephobia]: https://bundlephobia.com/result?p=pixi-ldtk-loader
+[bundlephobia-badge]: https://img.shields.io/bundlephobia/minzip/pixi-ldtk-loader.svg?style=flat-square
+[build-status]: https://github.com/trezy-studios/pixi-ldtk-loader/actions
+[build-status-badge]: https://img.shields.io/github/actions/workflow/status/trezy-studios/pixi-ldtk-loader/release.yml?style=flat-square
+[code-of-conduct]: CODE_OF_CONDUCT.md
+[code-of-conduct-badge]: https://img.shields.io/badge/code%20of-conduct-ff69b4.svg?style=flat-square
+[codeclimate]: https://codeclimate.com/github/trezy-studios/pixi-ldtk-loader
+[codeclimate-badge]: https://img.shields.io/codeclimate/maintainability/trezy-studios/pixi-ldtk-loader.svg?style=flat-square
+[coveralls]: https://coveralls.io/github/trezy-studios/pixi-ldtk-loader
+[coveralls-badge]: https://img.shields.io/coveralls/trezy-studios/pixi-ldtk-loader.svg?style=flat-square
+[downloads-badge]: https://img.shields.io/npm/dm/pixi-ldtk-loader.svg?style=flat-square
+[github-watch]: https://github.com/trezy-studios/pixi-ldtk-loader/watchers
+[github-watch-badge]: https://img.shields.io/github/watchers/trezy-studios/pixi-ldtk-loader.svg?style=social
+[github-star]: https://github.com/trezy-studios/pixi-ldtk-loader/stargazers
+[github-star-badge]: https://img.shields.io/github/stars/trezy-studios/pixi-ldtk-loader.svg?style=social
+[libraries.io]: https://libraries.io/npm/pixi-ldtk-loader
+[libraries.io-badge]: https://img.shields.io/librariesio/release/npm/pixi-ldtk-loader.svg?style=flat-square
+[license]: LICENSE
+[license-badge]: https://img.shields.io/npm/l/pixi-ldtk-loader.svg?style=flat-square
+[npmtrends]: https://www.npmtrends.com/pixi-ldtk-loader
+[package]: https://npmjs.com/package/pixi-ldtk-loader
+[prs]: CONTRIBUTING.md
+[prs-badge]: https://img.shields.io/badge/PRs-welcome-brightgreen.svg?style=flat-square
+[version-badge]: https://img.shields.io/npm/v/pixi-ldtk-loader.svg?style=flat-square
