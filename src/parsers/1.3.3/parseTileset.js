@@ -180,13 +180,8 @@ export async function parseTileset(config) {
 		tileIndex += 1
 	}
 
-	console.log(texture, atlas)
-	try {
-		tileset.spritesheet = new Spritesheet(texture, atlas)
-		await tileset.spritesheet.parse()
-	} catch (error) {
-		console.log(error)
-	}
+	tileset.spritesheet = new Spritesheet(texture, atlas)
+	await tileset.spritesheet.parse()
 
 	return tileset
 }
