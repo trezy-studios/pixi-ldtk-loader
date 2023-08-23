@@ -12,7 +12,7 @@ import { parseLayer } from './parseLayer.js'
  * Parses a level from LDtk source data.
  *
  * @param {object} config All configs.
- * @param {(import('../../quicktypes/1.3.3.js').LayerInstance | null)[]} config.sourceData Level data from the LDtk source.
+ * @param {(import('./quicktype.js').LayerInstance | null)[]} config.sourceData Level data from the LDtk source.
  * @param {types.ParsedTilesetMap} config.tilesets Tilesets that have been loaded from the LDtk source.
  * @returns {types.LDTKLevelLayer[]} The parsed level.
  */

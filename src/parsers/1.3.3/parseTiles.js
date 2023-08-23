@@ -12,7 +12,7 @@ import { getTileTextureFromTileset } from '../../helpers/getTileTextureFromTiles
  * Parses tiles from LDtk source data.
  *
  * @param {object} config All configs.
- * @param {import('../../quicktypes/1.3.3.js').TileInstance[]} config.sourceData Tile data from LDtk source.
+ * @param {import('./quicktype.js').TileInstance[]} config.sourceData Tile data from LDtk source.
  * @param {types.LDTKTileset} config.tileset The layer's tileset.
  * @returns {types.LDTKLevelLayerTile[]} An array of parsed tiles.
  */

@@ -1,3 +1,9 @@
+/** @typedef {import('./quicktype.js').EntityInstance} EntityInstance */
+/** @typedef {import('./quicktype.js').LayerInstance} LayerInstance */
+/** @typedef {import('./quicktype.js').Level} Level */
+/** @typedef {import('./quicktype.js').TilesetDefinition} TilesetDefinition */
+/** @typedef {import('./quicktype.js').TileInstance} TileInstance */
+
 /**
  * @typedef {object} LDTKEntity
  * @property {number} height The entity's height.
@@ -65,7 +71,7 @@
  * @property {object[]} levels An array of levels.
  * @property {object} meta Metadata about the generated data.
  * @property {string} meta.app The app used to generate the data.
- * @property {import('../../quicktypes/1.3.3.js').LDTKProject} meta.original The original JSON from the LDtk file.
+ * @property {import('./quicktype.js').LDTKProject} meta.original The original JSON from the LDtk file.
  * @property {number} meta.version The version of the app that was used to generate the data.
  * @property {ParsedTilesetMap} tilesets A mapping of tileset IDs to tilesets.
  */

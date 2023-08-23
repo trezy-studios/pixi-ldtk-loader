@@ -13,7 +13,7 @@ import { parseLevel } from './parseLevel.js'
  *
  * @param {object} config All configs.
  * @param {string} config.assetBasePath The base path from which levels will be loaded.
- * @param {import('../../quicktypes/1.3.3.js').Level[]} config.sourceData LDtk source data.
+ * @param {import('./quicktype.js').Level[]} config.sourceData LDtk source data.
  * @param {types.ParsedTilesetMap} config.tilesets Tilesets that have already been loaded from the LDtk source.
  * @returns {Promise<types.LDTKLevel[]>} An array of parsed levels.
  */
