@@ -14,6 +14,7 @@ When loading your `.ldtk` files, the loader will automatically create spriteshee
 * `@pixi/core` @ 7.2.4+
 * `@pixi/spritesheet` @ 7.2.4+
 * `@pixi/utils` @ 7.2.4+
+* [LDtk](https://ldtk.io) 1.3.3+
 
 ### Installation
 
