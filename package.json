@@ -18,10 +18,6 @@
     "semantic-release": "semantic-release"
   },
   "devDependencies": {
-    "@pixi/assets": "^7.2.4",
-    "@pixi/core": "^7.2.4",
-    "@pixi/spritesheet": "^7.2.4",
-    "@pixi/utils": "^7.2.4",
     "@types/eslint": "^8.44.2",
     "@types/mocha": "^10.0.1",
     "@types/node": "^20.5.1",
@@ -42,17 +38,15 @@
     "listr2": "^6.6.1",
     "mocha": "^10.2.0",
     "nyc": "^15.1.0",
+    "pixi.js": "^8.5.2",
     "quicktype-core": "^23.0.71",
     "semantic-release": "^21.0.9",
     "sinon": "^15.2.0",
     "ts-to-jsdoc": "^1.2.2",
     "typescript": "^5.1.6"
   },
+  "packageManager": "yarn@4.5.2",
   "peerDependencies": {
-    "@pixi/assets": "^7.2.4",
-    "@pixi/core": "^7.2.4",
-    "@pixi/spritesheet": "^7.2.4",
-    "@pixi/utils": "^7.2.4"
-  },
-  "packageManager": "yarn@4.5.2"
+    "pixi.js": "^8"
+  }
 }

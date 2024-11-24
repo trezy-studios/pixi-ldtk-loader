@@ -161,9 +161,11 @@ module.exports = {
 		'jsdoc/require-param': ['error', {
 			exemptedBy: ['component'],
 		}],
+		'jsdoc/require-param-type': ['off'],
 		'jsdoc/require-returns': ['error', {
 			exemptedBy: ['component'],
 		}],
+		'jsdoc/require-returns-type': ['off'],
 		'jsdoc/tag-lines': ['error', 'never', {
 			startLines: 1,
 		}],
