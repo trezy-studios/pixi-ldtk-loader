@@ -54,5 +54,5 @@
     "@pixi/spritesheet": "^7.2.4",
     "@pixi/utils": "^7.2.4"
   },
-  "packageManager": "yarn@3.6.1"
+  "packageManager": "yarn@4.5.2"
 }
