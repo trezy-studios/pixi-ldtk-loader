@@ -26,11 +26,8 @@ When loading your `.ldtk` files, the loader will automatically create spriteshee
 
 ### Requirements
 
-* `@pixi/assets` @ 7.2.4+
-* `@pixi/core` @ 7.2.4+
-* `@pixi/spritesheet` @ 7.2.4+
-* `@pixi/utils` @ 7.2.4+
-* [LDtk](https://ldtk.io) 1.3.3+
+* `pixi.js` @ 8.0.0+
+* [LDtk](https://ldtk.io) 1.0.0+
 
 ### Installation
 
@@ -77,7 +74,7 @@ The loader will create spritesheets and textures for your project, but due to th
 Assuming we've used the loader to load a project titled `game-project.ldtk`, here's an example of rendering all levels and layers at once. Keep in mind that for larger worlds you may want to render levels selectively based on the camera's current position.
 
 ```js
-import { Assets } from '@pixi/assets'
+import { Assets } from 'pixi.js'
 
 const app = new PIXI.Application()
 
