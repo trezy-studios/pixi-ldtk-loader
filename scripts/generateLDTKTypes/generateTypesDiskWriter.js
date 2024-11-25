@@ -32,7 +32,7 @@ export function generateTypesDiskWriter(version) {
 	return async function writeTypesToDisk(context) {
 		const { versionCache } = context
 		const OUTPUT_DIRECTORY = path.join(process.cwd(), 'src', 'parsers', version)
-		const OUTPUT_PATH = path.join(OUTPUT_DIRECTORY, 'quicktype.js')
+		const OUTPUT_PATH = path.join(OUTPUT_DIRECTORY, 'quicktype.ts')
 
 		try {
 			// eslint-disable-next-line security/detect-non-literal-fs-filename
@@ -42,7 +42,7 @@ export function generateTypesDiskWriter(version) {
 		}
 
 		// eslint-disable-next-line security/detect-non-literal-fs-filename
-		await fs.writeFile(OUTPUT_PATH, versionCache[version].javascript, 'utf-8')
+		await fs.writeFile(OUTPUT_PATH, versionCache[version].typescript, 'utf-8')
 
 		return context
 	}

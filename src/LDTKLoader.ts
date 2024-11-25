@@ -13,6 +13,13 @@ import {
 
 
 
+// Local imports
+import { BaseParser } from './BaseParser'
+
+
+
+
+
 // Constants
 const EXTENSION_NAME = 'LDTKLoader'
 
@@ -47,19 +54,25 @@ export const LDTKLoader: LoaderParser = {
 	 * @param loader The loader being used to load this asset.
 	 * @returns The parsed LDtk object.
 	 */
-	async load(url: string, asset: ResolvedAsset, loader: Loader) {
+	async load(url: string, asset?: ResolvedAsset, loader?: Loader) {
+		if (!asset || !loader) {
+			return
+		}
+
 		const adapter = DOMAdapter.get()
 
 		const response = await adapter.fetch(url)
 		const ldtkString = await response.text()
 
 		const untypedLDTKJSON = JSON.parse(ldtkString)
-		const { parse } = await import(`./parsers/${untypedLDTKJSON.jsonVersion}/index.js`)
+		const Parser: new () => BaseParser = await import(`./parsers/${untypedLDTKJSON.jsonVersion}/Parser.js`)
 
-		return parse({
+		const parser = new Parser
+
+		return parser.parse(
 			asset,
 			ldtkString,
 			loader,
-		})
+		)
 	},
 }

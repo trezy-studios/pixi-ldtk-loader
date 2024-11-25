@@ -1,7 +1,6 @@
 /* eslint-env node */
 
 // Local imports
-import { generateJavaScriptTranspiler } from './generateJavaScriptTranspiler.js'
 import { generateJSONSchemaDownloader } from './generateJSONSchemaDownloader.js'
 import { generateTypescriptTypesGenerator } from './generateTypescriptTypesGenerator.js'
 import { generateTypesDiskWriter } from './generateTypesDiskWriter.js'
@@ -33,10 +32,6 @@ function mapVersion(version) {
 					{
 						title: 'Generating Typescript types',
 						task: generateTypescriptTypesGenerator(version),
-					},
-					{
-						title: 'Transpiling Typescript to JavaScript with JSDoc',
-						task: generateJavaScriptTranspiler(version),
 					},
 					{
 						title: 'Saving to disk',

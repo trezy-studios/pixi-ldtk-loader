@@ -1,2 +1,2 @@
-export { LDTKLoader } from './LDTKLoader.ts'
-export { getTileTextureFromTileset } from './helpers/getTileTextureFromTileset.ts'
+export { LDTKLoader } from './LDTKLoader'
+export { getTileTextureFromTileset } from './helpers/getTileTextureFromTileset'

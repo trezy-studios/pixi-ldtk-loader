@@ -10,6 +10,10 @@ export function basename(path: string, extension?: string) {
 
 	let target = split.pop()
 
+	if (!target) {
+		return ''
+	}
+
 	if (extension) {
 		// eslint-disable-next-line security/detect-non-literal-regexp
 		target = target.replace(new RegExp(extension.replace('.', '\\.'), 'u'), '')
@@ -48,7 +52,7 @@ export function join(...paths: string[]) {
 				})
 
 			return accumulator
-		}, [])
+		}, [] as string[])
 
 	return `/${parsedPaths.join('/')}`
 }

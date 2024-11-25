@@ -1,16 +1,12 @@
-
 .DS_Store
-.next
 .env
-.env.build
-.env.local
-next-env.d.ts
 yarn-error.log
-*.tiled-session
 .nyc_output/
 .vercel/
 coverage/
+dist/
 node_modules/
+types/
 
 .yarn/*
 !.yarn/cache
