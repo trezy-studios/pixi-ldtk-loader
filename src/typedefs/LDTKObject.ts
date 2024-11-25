@@ -1,11 +1,12 @@
 // Local imports
+import { type BaseLDTKProject } from './BaseLDTKProject'
 import { type ParsedTilesetMap } from './ParsedTilesetMap'
 
 
 
 
 
-export type LDTKObject<LDTKProject> = {
+export type LDTKObject<LDTKProject extends BaseLDTKProject = BaseLDTKProject> = {
 	/** @description An array of levels. */
 	levels: unknown[],
 
