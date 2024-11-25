@@ -1,4 +1,5 @@
 // Local imports
+import { type LDTKEntity } from './LDTKEntity'
 import { type LDTKLevelLayerTile } from './LDTKLevelLayerTile'
 
 
@@ -13,7 +14,7 @@ export type LDTKLevelLayer = {
 	name: string,
 
 	/** @description Entities in the level. */
-	entities?: object[],
+	entities?: LDTKEntity[],
 
 	/** @description Tiles in the level. */
 	tiles?: LDTKLevelLayerTile[],
