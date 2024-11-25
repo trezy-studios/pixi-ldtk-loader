@@ -20,6 +20,15 @@ import { BaseParser } from './BaseParser'
 
 
 
+// Types
+type ParserImport = {
+	Parser: new () => BaseParser,
+}
+
+
+
+
+
 // Constants
 const EXTENSION_NAME = 'LDTKLoader'
 
@@ -65,7 +74,7 @@ export const LDTKLoader: LoaderParser = {
 		const ldtkString = await response.text()
 
 		const untypedLDTKJSON = JSON.parse(ldtkString)
-		const Parser: new () => BaseParser = await import(`./parsers/${untypedLDTKJSON.jsonVersion}/Parser.js`)
+		const { Parser }: ParserImport = await import(`./parsers/${untypedLDTKJSON.jsonVersion}/Parser.js`)
 
 		const parser = new Parser
 
