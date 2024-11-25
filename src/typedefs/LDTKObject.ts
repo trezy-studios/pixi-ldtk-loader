@@ -1,5 +1,6 @@
 // Local imports
 import { type BaseLDTKProject } from './BaseLDTKProject'
+import { type LDTKLevel } from './LDTKLevel'
 import { type ParsedTilesetMap } from './ParsedTilesetMap'
 
 
@@ -8,7 +9,7 @@ import { type ParsedTilesetMap } from './ParsedTilesetMap'
 
 export type LDTKObject<LDTKProject extends BaseLDTKProject = BaseLDTKProject> = {
 	/** @description An array of levels. */
-	levels: unknown[],
+	levels: LDTKLevel[],
 
 	meta: {
 		/** @description The app used to generate the data. */
